@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map as the base layer -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Subtle background image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_bus"
+        android:scaleType="centerCrop"
+        android:alpha="0.2"
+        android:contentDescription="Background" />
+
+    <!-- Semi-transparent overlay that reacts to theme changes -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        android:alpha="0.6"/>
+
+    <!-- UI Controls on top of the map and overlays -->
+    <TextView
+        android:id="@+id/tvSpeedMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="15dp"
+        android:text="0 km/h"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#00FF00"
+        android:background="#CC000000"
+        android:padding="8dp"
+        android:elevation="10dp"
+        android:gravity="center" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/btnMyLocation"
+        android:layout_alignTop="@id/btnMyLocation"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_compass"
+        app:backgroundTint="#FFFFFF"
+        app:tint="#0066CC"
+        app:fabSize="normal"
+        android:contentDescription="Compass Mode" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnMyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="260dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:backgroundTint="#FFFFFF"
+        app:tint="#0066CC"
+        app:fabSize="normal"
+        android:contentDescription="My Location" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/card_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LIVE BUS LOCATION &amp; REVENUE"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/brand_primary"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Pax"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"/>
+                    <TextView
+                        android:id="@+id/tvTotalPaxMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#CCCCCC"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Collected"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"/>
+                    <TextView
+                        android:id="@+id/tvTotalCollectedMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₱0.00"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#4CAF50"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_top_bg"
+        android:backgroundTint="@color/card_background"
+        android:padding="15dp">
+
+        <Button
+            android:id="@+id/btnToggleMap"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="SAT"
+            android:textSize="12sp"
+            android:layout_gravity="end"
+            android:backgroundTint="#555555"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnExportExcel"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="EXPORT DATA TO EXCEL"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnViewHistory"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="VIEW TICKET ISSUE HISTORY"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/brand_primary"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnBackData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:textColor="@color/adaptive_button_text"
+            android:backgroundTint="@color/cancel_button_bg"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

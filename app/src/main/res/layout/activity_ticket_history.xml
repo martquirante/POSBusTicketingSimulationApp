@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_bus"
+        android:scaleType="centerCrop"
+        android:alpha="0.1"
+        android:contentDescription="Background Pattern" />
+        
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        android:alpha="0.92" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/brand_secondary"
+            app:cardCornerRadius="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/bus_logo"
+                    android:layout_marginEnd="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ISSUED TICKETS HISTORY"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerHistory"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:clipToPadding="false"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_top_bg"
+            android:backgroundTint="@color/card_background"
+            android:padding="15dp"
+            android:elevation="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Report Actions"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnExportExcel"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="GENERATE PDF REPORT"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#D32F2F"
+                app:icon="@android:drawable/stat_sys_download_done"
+                app:iconTint="#FFFFFF"
+                app:iconGravity="textStart"
+                android:elevation="2dp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnBackHistory"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="BACK"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/adaptive_button_text"
+                android:backgroundTint="@color/cancel_button_bg"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

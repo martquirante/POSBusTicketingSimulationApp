@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_bus"
+        android:scaleType="centerCrop"
+        android:alpha="0.9" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        android:alpha="0.92" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/header_card_background"
+                    android:padding="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/bus_logo"
+                        android:background="@drawable/circle_white_bg"
+                        android:padding="4dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="12dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GCASH PAYMENT"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brand_primary"/> <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OFFICIAL SANTRANS QR"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"/> </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/gcash_logo"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="12dp"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL AMOUNT DUE"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:alpha="0.7"
+                        android:layout_marginBottom="5dp"/> <TextView
+                    android:id="@+id/tvTotalAmountQr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₱0.00"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brand_primary"
+                    android:layout_marginBottom="20dp"/> <ImageView
+                    android:id="@+id/ivQrCode"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/qrcode"
+                    android:background="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Please scan using GCash App"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="25dp"/> <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REFERENCE NO. (Optional)"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:alpha="0.7"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"/> <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:backgroundTint="@color/input_background"
+                    android:paddingHorizontal="15dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="25dp">
+
+                    <EditText
+                        android:id="@+id/etReferenceNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="8 Digit Reference code (Optional)"
+                        android:inputType="number"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="16sp"
+                        android:alpha="0.9"/> </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnConfirmPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:text="CONFIRM PAYMENT"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="15dp"
+                        android:elevation="6dp"
+                        android:layout_marginBottom="15dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelQr"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="CANCEL"
+                        android:textColor="@color/footer_background"
+                        app:strokeColor="@color/footer_background"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="15dp"/> </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="20dp"
+                android:background="@color/footer_background"
+                android:gravity="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ PROTOTYPE SIMULATION ONLY"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This application is for educational purposes only."
+                    android:textSize="11sp"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strictly NOT for commercial use or illegal activities."
+                    android:textSize="10sp"
+                    android:textStyle="italic"
+                    android:textColor="#FFCDD2"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_bus"
+        android:scaleType="centerCrop"
+        android:contentDescription="Background" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        android:alpha="0.92" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/header_card_background"
+                    android:padding="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:src="@drawable/bus_logo"
+                        android:background="@drawable/circle_white_bg"
+                        android:padding="4dp"
+                        android:layout_marginEnd="15dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="POS Bus Ticketing Simulation"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brand_primary"/>
+                        <TextView
+                            android:id="@+id/tvHeaderSerial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SERIAL #: ---"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_secondary"
+                            android:textStyle="bold"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BUS #: "
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvHeaderBus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="---"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="12dp"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="25dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PASSENGER DETAILS"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/brand_primary"
+                        android:layout_marginBottom="20dp"/>
+                    <TextView
+                        android:id="@+id/tvRouteInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Route Information"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/tvPriceInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fare: ₱0.00"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_primary"
+                        android:gravity="center"
+                        android:alpha="0.7"
+                        android:layout_marginBottom="25dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:backgroundTint="@color/input_background"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="15dp"
+                        android:layout_marginBottom="25dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_groups"
+                            app:tint="@color/brand_primary"/>
+                        <EditText
+                            android:id="@+id/etPassengerCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:hint="No. of Pax"
+                            android:textColorHint="@color/text_secondary"
+                            android:textColor="@color/text_primary"
+                            android:alpha="1.0" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:text="REGULAR"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        app:icon="@drawable/ic_person_tie"
+                        app:iconTint="#FFFFFF"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="15dp"
+                        android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnStudent"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:text="STUDENT (20% Discount)"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        app:icon="@drawable/ic_school"
+                        app:iconTint="#FFFFFF"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="15dp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSenior"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:text="SENIOR / PWD (20% Discount)"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        app:icon="@drawable/ic_elderly"
+                        app:iconTint="#FFFFFF"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="15dp"
+                        android:layout_marginBottom="30dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBackPassenger"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:text="BACK"
+                        android:textColor="@color/text_secondary"
+                        app:strokeColor="@color/text_secondary"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="15dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ PROTOTYPE SIMULATION ONLY"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF5252"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is not a legal official receipt."
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strictly for educational purposes only."
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

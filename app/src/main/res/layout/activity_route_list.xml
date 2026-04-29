@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_bus"
+        android:scaleType="centerCrop"
+        android:contentDescription="Background" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        android:alpha="0.95"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#0044FF"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/bus_logo"
+                    android:background="@drawable/circle_white_bg"
+                    android:padding="2dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SELECT DESTINATION"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap a route to issue ticket"
+                        android:textColor="#E3F2FD"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnConductorMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MENU"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#0044FF"
+                    app:backgroundTint="#FFFFFF"
+                    app:icon="@drawable/ic_menu_book"
+                    app:iconTint="#0044FF"
+                    app:cornerRadius="20dp"
+                    android:elevation="2dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvLoopDirection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOADING DIRECTION..."
+            android:gravity="center"
+            android:paddingVertical="12dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:background="#FFEB3B"
+            android:textColor="#000000"
+            android:letterSpacing="0.05"
+            android:elevation="4dp"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/routesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="#0044FF"
+                    android:layout_marginTop="50dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@color/card_background"
+            android:elevation="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="BACK TO SELECTION"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                app:backgroundTint="#E0E0E0"
+                app:cornerRadius="12dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="1dp"
+                app:icon="@android:drawable/ic_menu_revert"
+                app:iconTint="#000000"
+                app:iconGravity="textStart"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

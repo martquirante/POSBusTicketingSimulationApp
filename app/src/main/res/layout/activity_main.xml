@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_bus"
+        android:scaleType="centerCrop"
+        android:alpha="0.9" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                android:layout_marginBottom="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/header_card_background"
+                    android:padding="15dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/bus_logo"
+                            android:background="@drawable/circle_white_bg"
+                            android:padding="4dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="POS Bus Ticketing Simulation"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brand_primary"/>
+                            <TextView
+                                android:id="@+id/tvSerialNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SERIAL #: ---"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="10sp"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/btnThemeToggleMain"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_sun"
+                            app:tint="@color/icon_tint" />
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="8dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center">
+                        <TextView android:id="@+id/tvHeaderBus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BUS: --" android:textSize="11sp" android:textColor="@color/text_secondary" android:textStyle="italic" android:layout_marginEnd="10dp"/>
+                        <TextView android:id="@+id/tvHeaderDriver" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DRV: --" android:textSize="11sp" android:textColor="@color/text_secondary" android:textStyle="italic" android:layout_marginEnd="10dp"/>
+                        <TextView android:id="@+id/tvHeaderConductor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CON: --" android:textSize="11sp" android:textColor="@color/text_secondary" android:textStyle="italic"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="12dp"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="25dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="WELCOME!"
+                        android:textColor="@color/brand_primary"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvDateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:text="DATE &amp; TIME: Loading..."
+                        android:textColor="@color/text_secondary"
+                        android:alpha="0.7"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BUS NUMBER"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:alpha="0.8"
+                        android:layout_marginBottom="5dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="55dp" android:orientation="horizontal" android:gravity="center_vertical"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:backgroundTint="@color/input_background"
+                        android:paddingHorizontal="15dp" android:layout_marginBottom="15dp">
+
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_bus" app:tint="@color/brand_primary"/>
+                        <EditText android:id="@+id/etBusNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:hint="Enter Bus Number"
+                            android:inputType="number"
+                            android:paddingStart="12dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:alpha="0.8"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="DRIVER'S NAME"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:alpha="0.8"
+                        android:layout_marginBottom="5dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="55dp" android:orientation="horizontal" android:gravity="center_vertical"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:backgroundTint="@color/input_background"
+                        android:paddingHorizontal="15dp" android:layout_marginBottom="15dp">
+
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_driver" app:tint="@color/brand_primary"/>
+                        <EditText android:id="@+id/etDriverName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:hint="Enter Driver's Full Name"
+                            android:inputType="textCapWords"
+                            android:paddingStart="12dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:alpha="0.8"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CONDUCTOR'S NAME"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:alpha="0.8"
+                        android:layout_marginBottom="5dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="55dp" android:orientation="horizontal" android:gravity="center_vertical"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:backgroundTint="@color/input_background"
+                        android:paddingHorizontal="15dp" android:layout_marginBottom="30dp">
+
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_person_tie" app:tint="@color/brand_primary"/>
+                        <EditText android:id="@+id/etConductorName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:hint="Enter Conductor's Full Name"
+                            android:inputType="textCapWords"
+                            android:paddingStart="12dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:alpha="0.8"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnProceed"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:text="START TRIP"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        app:icon="@drawable/ic_play"
+                        app:iconGravity="textStart"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="15dp"
+                        android:layout_marginBottom="12dp"
+                        android:elevation="6dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnConductorMenu"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="CONDUCTOR MENU"
+                        android:textColor="#28A745"
+                        android:textStyle="bold"
+                        app:icon="@drawable/ic_menu_book"
+                        app:iconTint="#28A745"
+                        app:strokeColor="#28A745"
+                        app:strokeWidth="1.5dp"
+                        app:cornerRadius="15dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnUnlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#DC3545"
+                android:text="UNLOCK INFO"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="20dp"
+                android:background="@color/footer_background"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* PROTOTYPE SIMULATION ONLY"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This application is for educational purposes only."
+                    android:textSize="11sp"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strictly NOT for commercial use or illegal activities."
+                    android:textSize="10sp"
+                    android:textStyle="italic"
+                    android:textColor="#FFCDD2"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

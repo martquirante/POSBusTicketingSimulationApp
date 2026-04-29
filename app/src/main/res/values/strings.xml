@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">POS Bus Ticketing Simulation</string>
+
+    <string name="terms_english">"<b>DATA PRIVACY AND TERMS OF USE</b>\n\n<b>1. Simulation Only:</b> This application is a prototype designed for educational use. Not affiliated with official bus liners.\n\n<b>2. Data Collection:</b> We collect GPS location to simulate tracking features. Data is saved locally.\n\n<b>3. No Personal Data:</b> Do not enter real sensitive information like bank details or government IDs.\n\n<b>4. Consent:</b> Clicking Accept allows the app to use location and storage features."</string>
+
+    <string name="terms_tagalog">"<b>DATA PRIVACY AT KASUNDUAN</b>\n\n<b>1. Simulasyon Lamang:</b> Ang app na ito ay prototype para sa pag-aaral. Hindi konektado sa tunay na bus liner.\n\n<b>2. Pagkuha ng Datos:</b> Kinukuha ang GPS location para sa simulation. Naka-save ang records sa iyong device.\n\n<b>3. Walang Sensitibong Impormasyon:</b> Huwag maglagay ng totoong bank account o ID number.\n\n<b>4. Pahintulot:</b> Sa pag-pindot ng Accept, pumapayag kang gamitin ang location at storage ng device."</string>
+</resources>

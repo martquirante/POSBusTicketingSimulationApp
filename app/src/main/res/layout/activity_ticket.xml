@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_bus"
+        android:scaleType="centerCrop"
+        android:alpha="0.1"
+        android:contentDescription="Background" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/brand_primary"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="15dp">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/bus_logo"
+                            android:background="@drawable/circle_white_bg"
+                            android:padding="5dp"
+                            android:layout_marginEnd="15dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TICKET DETAILS"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold"
+                                android:textSize="22sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Official Transaction"
+                                android:textColor="#E3F2FD"
+                                android:textSize="12sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_directions_bus"
+                            app:tint="#BBDEFB"
+                            android:layout_marginEnd="8dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BUS #: "
+                            android:textColor="#BBDEFB"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:id="@+id/tvHeaderBusNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="3dp">
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_driver"
+                            app:tint="#E3F2FD"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="2dp"/>
+                        <TextView
+                            android:id="@+id/tvHeaderDriver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Driver: ---"
+                            android:textColor="#E3F2FD"
+                            android:textSize="13sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_person_tie"
+                            app:tint="#E3F2FD"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="2dp"/>
+                        <TextView
+                            android:id="@+id/tvHeaderConductor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Conductor: ---"
+                            android:textColor="#E3F2FD"
+                            android:textSize="13sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_background"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_blue_bg"
+                        android:backgroundTint="@color/input_background"
+                        android:padding="15dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FROM"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"/>
+
+                        <TextView
+                            android:id="@+id/tvTicketOrigin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ORIGIN"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textColor="@color/brand_primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/arrow_down_float"
+                            app:tint="@color/text_secondary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TO"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"/>
+
+                        <TextView
+                            android:id="@+id/tvTicketDest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DESTINATION"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textColor="@color/brand_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Type:"
+                            android:textColor="@color/text_secondary"/>
+                        <TextView
+                            android:id="@+id/tvTicketPaxType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Regular"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Count:"
+                            android:textColor="@color/text_secondary"/>
+                        <TextView
+                            android:id="@+id/tvTicketPaxCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#CCCCCC"
+                        android:layout_marginBottom="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Base Fare:"
+                            android:textColor="@color/text_secondary"/>
+                        <TextView
+                            android:id="@+id/tvTicketPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="P0.00"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Discount:"
+                            android:textColor="@color/text_secondary"/>
+                        <TextView
+                            android:id="@+id/tvTicketDiscount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="P0.00"
+                            android:textColor="#4CAF50"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TOTAL AMOUNT"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"/>
+                        <TextView
+                            android:id="@+id/tvTicketTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="P0.00"
+                            android:textStyle="bold"
+                            android:textSize="28sp"
+                            android:textColor="@color/brand_primary"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnPrintTicket"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="CONFIRM &amp; PAY CASH"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/adaptive_button_text"
+                android:background="@drawable/btn_blue_animated"
+                app:backgroundTint="@color/brand_primary"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGcash"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="PAY VIA GCASH"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/adaptive_button_text"
+                android:backgroundTint="#007DFE"
+                app:cornerRadius="8dp"
+
+                app:icon="@drawable/gcash_logo"
+                app:iconSize="24dp"
+                app:iconGravity="textStart"
+                app:iconTint="@null"
+                app:iconPadding="15dp"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnCancelTicket"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="CANCEL"
+                android:textSize="14sp"
+                android:textColor="@color/adaptive_button_text"
+                android:background="@drawable/btn_back_selector"
+                app:backgroundTint="@color/cancel_button_bg"
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ PROTOTYPE SIMULATION ONLY"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF5252"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is not a legal official receipt."
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For educational purposes only."
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvSerialNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Serial: ---"
+                android:gravity="center"
+                android:textSize="9sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

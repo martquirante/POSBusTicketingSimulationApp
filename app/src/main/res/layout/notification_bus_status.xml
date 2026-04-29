@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="@color/notif_background">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingEnd="12dp"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/notifLogo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/bus_logo"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:contentDescription="Bus Logo"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/notifLoopName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="FVR to ST.CRUZ"
+                android:textStyle="bold"
+                android:textColor="@color/notif_text_main"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/notifLastTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#05"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_gray_bg"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:textColor="@color/notif_text_sub" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/notifLastRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Stop: Muzon Central"
+            android:textSize="14sp"
+            android:textColor="@color/blue"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="@color/notif_divider"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_person_tie"
+                            app:tint="@color/notif_text_sub"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PAX"
+                    android:textSize="12sp"
+                    android:textColor="@color/notif_text_sub"
+                    android:textAllCaps="true"/>
+
+                <TextView
+                    android:id="@+id/notifTotalPax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/notif_text_main"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_payments"
+                    app:tint="@color/green"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CASH"
+                    android:textSize="12sp"
+                    android:textColor="@color/notif_text_sub"
+                    android:textAllCaps="true"/>
+
+                <TextView
+                    android:id="@+id/notifCashCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P0"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/green"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_smartphone"
+                    app:tint="@color/blue"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GCASH"
+                    android:textSize="12sp"
+                    android:textColor="@color/notif_text_sub"
+                    android:textAllCaps="true"/>
+
+                <TextView
+                    android:id="@+id/notifGcashCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P0"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/blue"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
