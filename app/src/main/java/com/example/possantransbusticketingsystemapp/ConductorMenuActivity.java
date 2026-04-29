@@ -32,6 +32,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
@@ -277,8 +278,8 @@ public class ConductorMenuActivity extends BaseActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     int liveReg = parseSnapshotInt(snapshot.child("regularCount"));
-                    int liveStu = parseSnapshotInt(snapshot.child("studentCount")));
-                    int liveSen = parseSnapshotInt(snapshot.child("seniorCount")));
+                    int liveStu = parseSnapshotInt(snapshot.child("studentCount"));
+                    int liveSen = parseSnapshotInt(snapshot.child("seniorCount"));
                     double liveCash = parseSnapshotDouble(snapshot.child("totalCash"));
                     double liveGcash = parseSnapshotDouble(snapshot.child("totalGcash"));
 
@@ -596,7 +597,7 @@ public class ConductorMenuActivity extends BaseActivity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 openAssistanceImagePicker();
             } else {
-                Toast.makeText(this, "Permission denied. Cannot attach photo.", Toast.SHORT_SHOW).show();
+                Toast.makeText(this, "Permission denied. Cannot attach photo.", Toast.LENGTH_SHORT).show();
             }
         }
     }

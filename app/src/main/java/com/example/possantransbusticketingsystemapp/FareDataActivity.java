@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
@@ -197,12 +199,24 @@ public class FareDataActivity extends BaseActivity implements SensorEventListene
 
         // Set custom bus icon
         Drawable busIcon = ContextCompat.getDrawable(this, R.drawable.ic_bus_marker);
-        locationOverlay.setPersonIcon(busIcon);
+        if (busIcon != null) {
+            locationOverlay.setPersonIcon(drawableToBitmap(busIcon));
+        }
 
         locationOverlay.enableMyLocation();
         locationOverlay.enableFollowLocation();
         locationOverlay.setDrawAccuracyEnabled(true);
         mapView.getOverlays().add(locationOverlay);
+    }
+
+    private Bitmap drawableToBitmap(Drawable drawable) {
+        int width = Math.max(1, drawable.getIntrinsicWidth());
+        int height = Math.max(1, drawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+        return bitmap;
     }
 
     // SensorEventListener Methods for Compass
