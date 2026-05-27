@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1070508476864",
+    "project_id": "santranspos",
+    "storage_bucket": "santranspos.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070508476864:android:c571e5bb50b203db7da025",
+        "android_client_info": {
+          "package_name": "com.example.possantransbusticketingsystemapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7r6giKkEDRtDkGtqzd5DPCanvLWm8y9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
