@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        ═══════════════════════════════════════════════════════════
+        Bus Corp. — Master Dark Theme
+        Material 3 DayNight, NoActionBar
+        Bg: #0A111F  Primary: #2563EB  Gold: #F59E0B
+        ═══════════════════════════════════════════════════════════
+    -->
+    <style name="Theme.BusCorp.DayNight.NoActionBar"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- ── Colour roles ── -->
+        <item name="colorPrimary">@color/buscorp_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/buscorp_primary_dark</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+
+        <item name="colorSecondary">@color/buscorp_gold</item>
+        <item name="colorOnSecondary">@color/text_inverse</item>
+        <item name="colorSecondaryContainer">@color/buscorp_gold_20</item>
+
+        <item name="colorTertiary">@color/buscorp_cyan</item>
+        <item name="colorOnTertiary">@color/text_inverse</item>
+
+        <item name="colorError">@color/buscorp_danger</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- ── Surfaces ── -->
+        <item name="colorSurface">@color/buscorp_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/buscorp_surface2</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorSurfaceContainer">@color/buscorp_surface2</item>
+        <item name="colorSurfaceContainerHigh">@color/buscorp_surface2</item>
+
+        <item name="colorSurfaceContainerHigh">@color/buscorp_surface2</item>
+
+        <item name="colorOutline">@color/buscorp_divider</item>
+        <item name="colorOutlineVariant">@color/buscorp_divider</item>
+
+        <!-- ── Window chrome ── -->
+        <item name="android:windowBackground">@color/buscorp_background</item>
+        <item name="android:colorBackground">@color/buscorp_background</item>
+        <item name="android:statusBarColor">@color/buscorp_background</item>
+        <item name="android:navigationBarColor">@color/nav_surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- ── Animation ── -->
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
+
+        <!-- ── Elevation overlay (makes M3 surface elevation visible on dark) ── -->
+        <item name="elevationOverlayEnabled">true</item>
+        <item name="elevationOverlayColor">@color/buscorp_primary</item>
+
+        <!-- ── TextInputLayout default style ── -->
+        <item name="textInputStyle">@style/Widget.BusCorp.TextInputLayout</item>
+
+        <!-- ── MaterialButton default style ── -->
+        <item name="materialButtonStyle">@style/Widget.BusCorp.Button.Primary</item>
+
+        <!-- ── Bottom nav ── -->
+        <item name="bottomNavigationStyle">@style/Widget.BusCorp.BottomNav</item>
+    </style>
+
+    <!--
+        Alias used in AndroidManifest android:theme attribute.
+        This lets us rename the style later without touching the manifest.
+    -->
+    <style name="Theme.POSSantransBusTicketingSystemApp"
+        parent="Theme.BusCorp.DayNight.NoActionBar"/>
+
+    <!-- ─── Splash-specific theme (no flicker) ─── -->
+    <style name="Theme.BusCorp.Splash" parent="Theme.BusCorp.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/buscorp_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <!-- ─── Login-specific theme (edge-to-edge immersive) ─── -->
+    <style name="Theme.BusCorp.Login" parent="Theme.BusCorp.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/buscorp_background</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════
+         WIDGET STYLES
+    ═══════════════════════════════════════════ -->
+
+    <!-- TextInputLayout — dark glass style -->
+    <style name="Widget.BusCorp.TextInputLayout"
+        parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/buscorp_glass</item>
+        <item name="boxStrokeColor">@color/buscorp_divider</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+        <item name="startIconTint">@color/text_secondary</item>
+        <item name="endIconTint">@color/text_secondary</item>
+    </style>
+
+    <!-- Primary gradient button -->
+    <style name="Widget.BusCorp.Button.Primary"
+        parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/buscorp_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="rippleColor">@color/buscorp_primary_20</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Outlined / glass button -->
+    <style name="Widget.BusCorp.Button.Outline"
+        parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/buscorp_primary</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/buscorp_primary_glow</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="backgroundTint">@color/transparent</item>
+    </style>
+
+    <!-- Bottom navigation -->
+    <style name="Widget.BusCorp.BottomNav"
+        parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/nav_surface</item>
+        <item name="itemIconTint">@color/nav_icon_tint</item>
+        <item name="itemTextColor">@color/nav_icon_tint</item>
+    </style>
+
+    <!-- Card view dark glass -->
+    <style name="Widget.BusCorp.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/buscorp_surface</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════
+         TEXT APPEARANCE
+         Using android system fonts (Poppins/Inter via downloadable fonts
+         are declared in res/font/ — referenced from here)
+    ═══════════════════════════════════════════ -->
+
+    <style name="TextAppearance.BusCorp.Display" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.BusCorp.Headline" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.BusCorp.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.BusCorp.Label" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════
+         DIALOG THEME
+    ═══════════════════════════════════════════ -->
+    <style name="Theme.BusCorp.Dialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="android:colorBackground">@color/buscorp_surface</item>
+        <item name="colorSurface">@color/buscorp_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorPrimary">@color/buscorp_primary</item>
+    </style>
+
+</resources>

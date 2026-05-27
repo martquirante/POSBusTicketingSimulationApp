@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bus Corp. Splash Screen
+    ─────────────────────────────────────────────────────────────
+    Layout layers (bottom → top):
+    1. Full-screen dark gradient background
+    2. Subtle particle/grid overlay (tinted drawable)
+    3. "Route track" — a horizontal neon line the bus rides on
+    4. Bus ImageView — starts off screen left, animates right
+    5. Logo + wordmark in center (fades in after bus passes)
+    6. Version + "Powered by" footer (slide-up)
+    ─────────────────────────────────────────────────────────────
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splashRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/buscorp_background"
+    tools:context=".features.splash.SplashActivity">
+
+    <!-- ══ LAYER 1 — Radial glow at center top ══ -->
+    <View
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="-80dp"
+        android:background="@drawable/splash_glow_radial"
+        android:alpha="0.35"/>
+
+    <!-- ══ LAYER 2 — Scene container (bus track + bus) ══ -->
+    <RelativeLayout
+        android:id="@+id/sceneContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Route track glow line -->
+        <View
+            android:id="@+id/trackLine"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/splash_route_glow"
+            android:alpha="0"/>
+
+        <!-- Track fill (animated width from 0 → full) -->
+        <View
+            android:id="@+id/trackFill"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="80dp"
+            android:background="@color/buscorp_primary"
+            android:alpha="0.8"/>
+
+        <!-- ══ BUS (starts off-screen left, slides right) ══ -->
+        <ImageView
+            android:id="@+id/ivBus"
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/asset_bus_splash"
+            android:scaleType="fitEnd"
+            android:contentDescription="Bus Corp. Bus"
+            android:alpha="0"/>
+
+        <!-- Bus glow shadow beneath bus -->
+        <View
+            android:id="@+id/busGlow"
+            android:layout_width="160dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/ivBus"
+            android:layout_alignLeft="@id/ivBus"
+            android:layout_marginTop="-8dp"
+            android:background="@drawable/splash_bus_glow_shadow"
+            android:alpha="0"/>
+
+    </RelativeLayout>
+
+    <!-- ══ LAYER 3 — Center logo block (fades in after bus passes) ══ -->
+    <LinearLayout
+        android:id="@+id/logoBlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="80dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:alpha="0">
+
+        <!-- Logo image — pos-bus-logo.png from assets -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/asset_pos_bus_logo"
+            android:scaleType="fitCenter"
+            android:contentDescription="Bus Corp. Logo"/>
+
+        <!-- Wordmark -->
+        <TextView
+            android:id="@+id/tvWordmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bus Corp."
+            android:textColor="@color/text_primary"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.04"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Tagline -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conductor Command Center"
+            android:textColor="@color/buscorp_primary_glow"
+            android:textSize="12sp"
+            android:letterSpacing="0.18"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Neon underline accent -->
+        <View
+            android:id="@+id/neonUnderline"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/splash_neon_underline"
+            android:scaleX="0"/>
+
+    </LinearLayout>
+
+    <!-- ══ LAYER 4 — Footer (version + powered-by, slides up) ══ -->
+    <LinearLayout
+        android:id="@+id/footerBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="48dp"
+        android:translationY="60dp"
+        android:alpha="0">
+
+        <!-- Dots loading indicator (3 static dots — NO ProgressBar/spinner) -->
+        <LinearLayout
+            android:id="@+id/dotsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <View android:id="@+id/dot1"
+                android:layout_width="8dp" android:layout_height="8dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/splash_dot_active"/>
+            <View android:id="@+id/dot2"
+                android:layout_width="8dp" android:layout_height="8dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/splash_dot_inactive"/>
+            <View android:id="@+id/dot3"
+                android:layout_width="8dp" android:layout_height="8dp"
+                android:background="@drawable/splash_dot_inactive"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powered by Bus Corp. Systems"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.06"/>
+
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v1.0.0"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+</FrameLayout>

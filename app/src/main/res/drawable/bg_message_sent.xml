@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This drawable defines the background for messages sent by the current user.
+  Technology Used: Shape Drawable
+
+  How it works:
+  - The <shape> tag defines a geometric shape.
+  - <solid> sets the fill color of the shape. We use our primary brand color.
+  - <corners> allows us to round the corners of the shape. We round three of the four corners
+    to create a classic chat bubble look, with the bottom-right corner remaining sharp.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/brand_primary" />
+    <corners
+        android:topLeftRadius="16dp"
+        android:topRightRadius="16dp"
+        android:bottomLeftRadius="16dp"
+        android:bottomRightRadius="0dp" />
+</shape>

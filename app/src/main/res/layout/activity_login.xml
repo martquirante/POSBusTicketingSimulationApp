@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bus Corp. Login Screen
+    Theme: Glassmorphism, Dark #0A111F, edge-to-edge
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/buscorp_background"
+    tools:context=".LoginActivity">
+
+    <!-- ══ LAYER 1 — Background Image / Glow ══ -->
+    <ImageView
+        android:id="@+id/ivLoginBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/asset_login_bg"
+        android:scaleType="centerCrop"
+        android:alpha="0.4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+        
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A60A111F" /> <!-- Dark scrim over bg -->
+
+    <!-- ══ LAYER 2 — Hero Bus ══ -->
+    <ImageView
+        android:id="@+id/ivHeroBus"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/asset_bus_login"
+        android:scaleType="fitCenter"
+        android:translationY="-40dp"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- ══ LAYER 3 — Glassmorphism Login Card ══ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/ivHeroBus"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="48dp">
+            
+            <LinearLayout
+                android:id="@+id/loginCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/glass_panel_login"
+                android:padding="24dp"
+                android:elevation="16dp"
+                android:translationY="40dp"
+                android:alpha="0">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conductor Portal"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign in to your shift"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="24dp"/>
+                    
+                <!-- Email Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email or Conductor ID"
+                    app:startIconDrawable="@drawable/ic_person_tie"
+                    app:startIconTint="@color/buscorp_primary"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.BusCorp.TextInputLayout">
+                    
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/text_primary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/buscorp_primary"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/text_secondary"
+                    android:layout_marginBottom="24dp"
+                    style="@style/Widget.BusCorp.TextInputLayout">
+                    
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textColor="@color/text_primary" />
+                </com.google.android.material.textfield.TextInputLayout>
+                
+                <!-- Login Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Secure Sign In"
+                    app:cornerRadius="12dp"
+                    style="@style/Widget.BusCorp.Button.Primary"/>
+                    
+                <!-- Biometric Section -->
+                <LinearLayout
+                    android:id="@+id/btnBiometric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_smartphone"
+                        app:tint="@color/buscorp_primary_glow"/>
+                        
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Use Face ID / Fingerprint"
+                        android:textColor="@color/buscorp_primary_glow"
+                        android:textSize="12sp"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Command Center v1.0"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                android:layout_marginTop="32dp"
+                android:layout_gravity="center_horizontal"/>
+                
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

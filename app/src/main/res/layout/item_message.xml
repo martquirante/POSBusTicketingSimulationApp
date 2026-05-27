@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This layout defines the visual representation of a single chat message in the RecyclerView.
+  Technology Used: LinearLayout, TextView
+
+  How it works:
+  - The MessageAdapter will inflate this layout for each message in the chat list.
+  - The root LinearLayout holds the TextViews for the sender and the message content.
+  - In a more advanced version, we could have two different layouts: one for messages sent by the
+    current user (e.g., aligned to the right) and one for received messages (aligned to the left).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/senderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Sender" />
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Message text goes here" />
+
+</LinearLayout>

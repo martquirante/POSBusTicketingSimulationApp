@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This layout defines the UI for a message sent by the current user.
+
+  How it works:
+  - The root LinearLayout is set to `gravity="end"`, which pushes its contents to the right side of the screen.
+  - The inner LinearLayout, which contains the actual message text, uses the `bg_message_sent.xml` drawable
+    as its background, giving it the brand color and rounded corners.
+  - The TextView for the message has white text for better contrast against the colored background.
+  - Note: We don't show the sender's name on messages they sent themselves, which is a common UX pattern.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_message_sent"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:id="@+id/messageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message text goes here"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

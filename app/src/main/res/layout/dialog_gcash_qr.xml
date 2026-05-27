@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@android:color/white"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GCASH PAYMENT"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#0066CC"
+        android:layout_marginBottom="15dp"/>
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/qrcode"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tvDialogAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Amount: ₱0.00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnDialogConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="CONFIRM PAYMENT"
+        android:backgroundTint="#0066CC"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvDialogCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:textColor="#D32F2F"
+        android:textStyle="bold"
+        android:padding="10dp"/>
+
+</LinearLayout>

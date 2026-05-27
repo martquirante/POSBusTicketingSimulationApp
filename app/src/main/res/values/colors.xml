@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bus Corp. — Dark-First Color Palette
+    Primary bg:   #0A111F  (Deep Space Blue — slightly cooler than 0A0F1C)
+    Surface:      #111827  (Card/panel dark)
+    Surface2:     #1A2235  (Elevated surface)
+    Glass:        rgba(255,255,255,0.06)
+    Primary:      #2563EB  (Neon Blue)
+    Primary glow: #3B82F6  (Lighter neon for glow effects)
+    Cyan accent:  #06B6D4  (Teal/Cyan highlight)
+    Gold:         #F59E0B  (Amber/Gold accent)
+    Success:      #10B981  (Emerald green)
+    Danger:       #EF4444
+    Warning:      #F97316  (Orange)
+    Text primary:   #F9FAFB
+    Text secondary: #9CA3AF
+    Text muted:     #4B5563
+    Divider:        #1F2937
+-->
+<resources>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CORE BACKGROUNDS
+    ══════════════════════════════════════════════════════════ -->
+    <color name="buscorp_background">#0A111F</color>
+    <color name="buscorp_surface">#111827</color>
+    <color name="buscorp_surface2">#1A2235</color>
+    <color name="buscorp_divider">#1F2937</color>
+
+    <!-- Glassmorphism: 6% white overlay -->
+    <color name="buscorp_glass">#0FFFFFFF</color>
+    <!-- 14% white overlay (stronger glass) -->
+    <color name="buscorp_glass_strong">#24FFFFFF</color>
+
+    <!-- ══════════════════════════════════════════════════════════
+         BRAND / ACCENT COLORS
+    ══════════════════════════════════════════════════════════ -->
+    <color name="buscorp_primary">#2563EB</color>
+    <color name="buscorp_primary_glow">#3B82F6</color>
+    <color name="buscorp_primary_dark">#1D4ED8</color>
+    <color name="buscorp_primary_20">#332563EB</color>
+
+    <color name="buscorp_cyan">#06B6D4</color>
+    <color name="buscorp_cyan_20">#3306B6D4</color>
+
+    <color name="buscorp_gold">#F59E0B</color>
+    <color name="buscorp_gold_dark">#D97706</color>
+    <color name="buscorp_gold_20">#33F59E0B</color>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SEMANTIC COLORS
+    ══════════════════════════════════════════════════════════ -->
+    <color name="buscorp_success">#10B981</color>
+    <color name="buscorp_success_20">#3310B981</color>
+    <color name="buscorp_danger">#EF4444</color>
+    <color name="buscorp_danger_20">#33EF4444</color>
+    <color name="buscorp_warning">#F97316</color>
+    <color name="buscorp_warning_20">#33F97316</color>
+
+    <!-- ══════════════════════════════════════════════════════════
+         TYPOGRAPHY
+    ══════════════════════════════════════════════════════════ -->
+    <color name="text_primary">#F9FAFB</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <color name="text_muted">#4B5563</color>
+    <color name="text_inverse">#0A111F</color>
+    <color name="text_link">#3B82F6</color>
+
+    <!-- ══════════════════════════════════════════════════════════
+         BOTTOM NAVIGATION
+    ══════════════════════════════════════════════════════════ -->
+    <color name="nav_surface">#0D1520</color>
+    <color name="nav_indicator">#1E3A6E</color>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SYSTEM / COMPAT (keep these for legacy views that reference them)
+    ══════════════════════════════════════════════════════════ -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Required by mipmap adaptive icon background -->
+    <color name="ic_launcher_background">#2563EB</color>
+
+    <!-- Brand aliases for backward compat with old flat-package activities -->
+    <color name="brand_primary">#2563EB</color>
+    <color name="brand_secondary">#F59E0B</color>
+
+    <!-- GCash blue -->
+    <color name="gcash_blue">#007DFE</color>
+
+</resources>

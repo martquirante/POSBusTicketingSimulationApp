@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bus Corp. Ticket History Screen
+    Theme: Dark Navy, Glassmorphism
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/buscorp_background"
+    tools:context=".TicketHistoryActivity">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp"
+        android:paddingHorizontal="24dp"
+        android:background="#660A111F"
+        android:elevation="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/btn_back_selector"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/text_primary"/>
+            
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Shift History"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+            
+        <!-- Export Button -->
+        <ImageView
+            android:id="@+id/btnExport"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_save"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/buscorp_cyan"/>
+    </LinearLayout>
+
+    <!-- Filter Chips -->
+    <HorizontalScrollView
+        android:id="@+id/filterScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+        
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+            
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Tickets"
+                android:checked="true"
+                style="@style/Widget.Material3.Chip.Filter"/>
+                
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regular"
+                style="@style/Widget.Material3.Chip.Filter"/>
+                
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student"
+                style="@style/Widget.Material3.Chip.Filter"/>
+                
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDiscounted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senior/PWD"
+                style="@style/Widget.Material3.Chip.Filter"/>
+                
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Shimmer Loading State -->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:shimmer_duration="1200"
+        app:layout_constraintTop_toBottomOf="@id/filterScroll"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            
+            <!-- Dummy Items -->
+            <View android:layout_width="match_parent" android:layout_height="80dp" android:background="@drawable/glass_panel_login" android:layout_marginBottom="12dp" android:alpha="0.3"/>
+            <View android:layout_width="match_parent" android:layout_height="80dp" android:background="@drawable/glass_panel_login" android:layout_marginBottom="12dp" android:alpha="0.3"/>
+            <View android:layout_width="match_parent" android:layout_height="80dp" android:background="@drawable/glass_panel_login" android:layout_marginBottom="12dp" android:alpha="0.3"/>
+            <View android:layout_width="match_parent" android:layout_height="80dp" android:background="@drawable/glass_panel_login" android:layout_marginBottom="12dp" android:alpha="0.3"/>
+            <View android:layout_width="match_parent" android:layout_height="80dp" android:background="@drawable/glass_panel_login" android:alpha="0.3"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <!-- Actual List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/filterScroll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_ticket_history"/>
+
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No tickets found for this filter."
+        android:textColor="@color/text_secondary"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

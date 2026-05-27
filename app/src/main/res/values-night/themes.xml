@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_primary">#64B5F6</color>
+    <color name="brand_secondary">#FDD835</color>
+
+    <color name="purple_500">#BB86FC</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="main_background">#121212</color>
+    <color name="card_background">#1E1E1E</color>
+    <color name="header_card_background">#333333</color>
+    <color name="input_background">#2C2C2C</color>
+    <color name="footer_background">#B71C1C</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_inverse">#000000</color>
+    <color name="icon_tint">#64B5F6</color>
+    <color name="adaptive_button_text">#FFFFFF</color>
+    <color name="cancel_button_bg">#424242</color>
+
+    <color name="notif_background">#1F1F1F</color>  <color name="notif_text_main">#FFFFFF</color>    <color name="notif_text_sub">#BDBDBD</color>     <color name="notif_divider">#424242</color>      <color name="gray">#BDBDBD</color>
+    <color name="dark_gray">#E0E0E0</color>
+    <color name="blue">#64B5F6</color>  <color name="green">#81C784</color> </resources>

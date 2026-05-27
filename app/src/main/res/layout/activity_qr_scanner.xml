@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bus Corp. QR Scanner Screen
+    Theme: Dark Navy, Glassmorphism, Neon Cyan Beam
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/buscorp_background">
+
+    <!-- Full-screen Camera Preview -->
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/barcodeScanner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:zxing_use_texture_view="true"
+        app:zxing_scanner_layout="@layout/custom_barcode_scanner"/>
+
+    <!-- Glassmorphism Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp"
+        android:paddingHorizontal="24dp"
+        android:background="#660A111F"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/btn_back_selector"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/text_primary"/>
+            
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Scan Passenger Ticket"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+            
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <!-- Glassmorphism Status Panel (Bottom) -->
+    <LinearLayout
+        android:id="@+id/statusPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:layout_margin="24dp"
+        android:background="@drawable/glass_panel_login"
+        android:elevation="12dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <TextView
+            android:id="@+id/tvScanStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Align QR code within the frame"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <!-- Feedback Animation Overlay -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieFeedback"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
